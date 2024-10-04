@@ -1,7 +1,13 @@
 package br.com.code.pethotel.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Builder
 public class PetDto {
 
 	private long id;

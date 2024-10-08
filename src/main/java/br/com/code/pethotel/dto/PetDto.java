@@ -1,10 +1,16 @@
 package br.com.code.pethotel.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@Builder
 public class PetDto {
 
-	private long id;
+	private int id;
 
 	@NotBlank(message = "O campo tipo é obrigatório")
 	private String tipo;
@@ -27,6 +33,6 @@ public class PetDto {
 	@NotBlank(message = "O campo observação é obrigatório")
 	private String observacao;
 
-	private TutorDto tutorDto;
+	private EstadiaDto estadia;
 
 }

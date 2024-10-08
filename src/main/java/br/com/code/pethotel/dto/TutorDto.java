@@ -1,19 +1,16 @@
 package br.com.code.pethotel.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
-
 public class TutorDto {
 
-	private long id;
+	private int id;
 
 	@NotBlank(message = "O campo nome é obrigatório")
 	private String nome;
@@ -51,6 +48,6 @@ public class TutorDto {
 	@NotBlank(message = "O campo estado é obrigatório")
 	private String estado;
 
-	private List<PetDto> petsDtos;
+	private List<PetDto> pets;
 
 }

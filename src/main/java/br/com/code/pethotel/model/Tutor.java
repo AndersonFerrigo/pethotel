@@ -16,8 +16,8 @@ import java.util.List;
 public class Tutor {
 
 	@Id
-	@GeneratedValue
-	private long id;
+	@GeneratedValue()
+	private int id;
 	private String nome;
 	private String sobrenome;
 	private String cpf;

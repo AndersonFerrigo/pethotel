@@ -14,7 +14,7 @@ public class Pet {
 
 	@Id
 	@GeneratedValue()
-	private long id;
+	private int id;
 	private String tipo;
 	private String raca;
 	private String nome;
@@ -26,5 +26,9 @@ public class Pet {
 	@ManyToOne
 	@JoinColumn(name = "tutor_id", nullable = false)
 	private Tutor tutor;
+
+	@ManyToOne
+	@JoinColumn(name = "estadia_id", nullable = false)
+	private Estadia estadia;
 
 }

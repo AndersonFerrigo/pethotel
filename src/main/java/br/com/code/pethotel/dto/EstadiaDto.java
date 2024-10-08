@@ -1,16 +1,16 @@
 package br.com.code.pethotel.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class EstadiaDto {
 
-	private int id;
+	private Long id;
 
 	@NotBlank(message = "Data de entrada do Pet deve ser preenchida")
 	private String entrada;

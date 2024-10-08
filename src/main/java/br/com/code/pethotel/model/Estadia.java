@@ -16,7 +16,7 @@ public class Estadia {
 
 	@Id
 	@GeneratedValue()
-	private int id;
+	private Long id;
 	private String entrada;
 	private String saida;
 	private int diasDeEestadia;

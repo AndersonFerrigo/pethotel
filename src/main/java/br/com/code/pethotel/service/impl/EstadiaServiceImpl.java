@@ -26,7 +26,7 @@ public class EstadiaServiceImpl implements EstadiaService {
 	}
 
 	@Override
-	public Estadia updateEstadiaPet(Estadia estadia, int id) {
+	public Estadia updateEstadiaPet(Estadia estadia, Long id) {
 		Optional<Estadia> retrivedEstadia = estadiaRepository.findById(id);
 
 		Estadia estadiaToUpdate = Estadia.builder()
@@ -42,7 +42,7 @@ public class EstadiaServiceImpl implements EstadiaService {
 	}
 
 	@Override
-	public Optional<Estadia> findEstadiaPetById(int id) {
+	public Optional<Estadia> findEstadiaPetById(Long id) {
 		return estadiaRepository.findById(id);
 
 	}

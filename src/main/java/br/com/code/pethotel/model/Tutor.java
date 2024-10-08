@@ -17,7 +17,7 @@ public class Tutor {
 
 	@Id
 	@GeneratedValue()
-	private int id;
+	private Long id;
 	private String nome;
 	private String sobrenome;
 	private String cpf;

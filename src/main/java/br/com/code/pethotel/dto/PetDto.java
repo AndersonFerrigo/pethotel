@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 public class PetDto {
 
-	private int id;
+	private Long id;
 
 	@NotBlank(message = "O campo tipo é obrigatório")
 	private String tipo;

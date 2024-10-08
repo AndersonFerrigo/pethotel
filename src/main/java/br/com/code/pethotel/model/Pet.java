@@ -14,7 +14,7 @@ public class Pet {
 
 	@Id
 	@GeneratedValue()
-	private int id;
+	private Long id;
 	private String tipo;
 	private String raca;
 	private String nome;

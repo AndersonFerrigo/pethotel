@@ -10,7 +10,7 @@ import java.util.List;
 @Builder
 public class TutorDto {
 
-	private int id;
+	private Long id;
 
 	@NotBlank(message = "O campo nome é obrigatório")
 	private String nome;

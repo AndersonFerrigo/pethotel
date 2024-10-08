@@ -43,7 +43,7 @@ public class TutorServiceImpl implements TutorService {
 	}
 
 	@Override
-	public Tutor findById(int id) {
+	public Tutor findById(Long id) {
 		Optional<Tutor> tutor = tutorRepository.findById(id);
 		return tutor.orElse(null);
 	}

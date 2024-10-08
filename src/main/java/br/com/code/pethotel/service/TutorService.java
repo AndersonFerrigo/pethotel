@@ -8,7 +8,7 @@ public interface TutorService {
 
 	Tutor saveTutor(Tutor tutor);
 	Tutor updateTutor(Tutor tutor);
-	Tutor findById(int id);
+	Tutor findById(Long id);
 	List<Tutor> findAllTutores();
 
 

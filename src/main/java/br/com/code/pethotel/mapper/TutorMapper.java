@@ -1,14 +1,19 @@
 package br.com.code.pethotel.mapper;
 
+import br.com.code.pethotel.dto.PetDto;
 import br.com.code.pethotel.dto.TutorDto;
 import br.com.code.pethotel.model.Tutor;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class TutorMapper {
 
-	public Tutor toEntity(TutorDto tutorDto){
-		return Tutor.builder()
+	public Tutor toEntity(TutorDto tutorDto) {
+		return Tutor
+				.builder()
 				.id(tutorDto.getId())
 				.nome(tutorDto.getNome())
 				.sobrenome(tutorDto.getSobrenome())
@@ -25,8 +30,9 @@ public class TutorMapper {
 				.build();
 	}
 
-	public TutorDto toDto(Tutor tutor){
-		return TutorDto.builder()
+	public TutorDto toDto(Tutor tutor) {
+		return TutorDto
+				.builder()
 				.id(tutor.getId())
 				.nome(tutor.getNome())
 				.sobrenome(tutor.getSobrenome())
@@ -43,4 +49,43 @@ public class TutorMapper {
 				.build();
 	}
 
+	public List<TutorDto> retrieveAllTutores(List<Tutor> tutores) {
+		List<TutorDto> listTutores = new ArrayList<TutorDto>();
+
+		tutores.forEach(tutor -> {
+			List<PetDto> listPets = new ArrayList<PetDto>();
+
+			tutor.getPets().forEach(pet ->
+					listPets.add(PetDto.builder()
+							.id(pet.getId())
+							.tipo(pet.getTipo())
+							.raca(pet.getRaca())
+							.nome(pet.getNome())
+							.idade(pet.getIdade())
+							.peso(pet.getPeso())
+							.sexo(pet.getSexo())
+							.observacao(pet.getObservacao())
+							.build()));
+
+			listTutores.add(TutorDto.builder()
+					.id(tutor.getId())
+					.nome(tutor.getNome())
+					.sobrenome(tutor.getSobrenome())
+					.cpf(tutor.getCpf())
+					.sexo(tutor.getSexo())
+					.idade(tutor.getIdade())
+					.telefone(tutor.getTelefone())
+					.endereco(tutor.getEndereco())
+					.numero(tutor.getNumero())
+					.bairro(tutor.getBairro())
+					.cep(tutor.getCep())
+					.cidade(tutor.getCidade())
+					.estado(tutor.getEstado())
+					.pets(listPets)
+					.build());
+
+		});
+
+		return listTutores;
+	}
 }

@@ -10,7 +10,7 @@ import lombok.Setter;
 @Builder
 public class PetDto {
 
-	private long id;
+	private int id;
 
 	@NotBlank(message = "O campo tipo é obrigatório")
 	private String tipo;
@@ -33,6 +33,6 @@ public class PetDto {
 	@NotBlank(message = "O campo observação é obrigatório")
 	private String observacao;
 
-	private TutorDto tutorDto;
+	private EstadiaDto estadia;
 
 }
